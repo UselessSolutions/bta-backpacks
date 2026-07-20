@@ -1,12 +1,13 @@
 package tosutosu.betterwithbackpacks;
 
+import turniplabs.halplibe.HalpLibe;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 
 import java.util.Properties;
 
 public class BetterWithBackpacks implements GameStartEntrypoint {
-    public static final String MOD_ID = "betterwithbackpacks";
+    public static final String MOD_ID = HalpLibe.registerMod("betterwithbackpacks");
     public static int GUI_LABEL_COLOR = 0x404040;
     public static int GUI_BACKPACK_ID;
     public static boolean ENABLE_BACKPACKS;
