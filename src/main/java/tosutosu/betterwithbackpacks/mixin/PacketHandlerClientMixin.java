@@ -18,7 +18,7 @@ public abstract class PacketHandlerClientMixin {
     @Shadow
     private Minecraft mc;
 
-    @Inject(method="handleOpenWindow", at=@At("TAIL"))
+    @Inject(method="handleContainerOpen", at=@At("TAIL"))
     public void handleOpenWindow_injection(final PacketContainerOpen packet, final CallbackInfo ci) {
         if (packet.inventoryType == BetterWithBackpacks.GUI_BACKPACK_ID) {
             //noinspection CastToIncompatibleInterface
