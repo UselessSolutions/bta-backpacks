@@ -1,6 +1,7 @@
 package tosutosu.betterwithbackpacks.gui.guiscreen;
 
 import net.minecraft.client.gui.container.ScreenContainerAbstract;
+import net.minecraft.client.render.renderer.GLRenderer;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.item.ItemStack;
 import org.lwjgl.opengl.GL11;
@@ -28,13 +29,13 @@ public class GuiBackpack extends ScreenContainerAbstract {
     }
     @Override
     protected void drawGuiContainerForegroundLayer() {
-        drawStringShadow(fontRenderer, this.backpack.backpackInventory.getNameTranslationKey(), 8, 6, BetterWithBackpacks.GUI_LABEL_COLOR);
-        drawStringShadow(fontRenderer, "Inventory", 8, this.ySize - 96 + 2, BetterWithBackpacks.GUI_LABEL_COLOR);
+        drawStringNoShadow(fontRenderer, this.backpack.backpackInventory.getNameTranslationKey(), 8, 6, BetterWithBackpacks.GUI_LABEL_COLOR);
+        drawStringNoShadow(fontRenderer, "Inventory", 8, this.ySize - 96 + 2, BetterWithBackpacks.GUI_LABEL_COLOR);
     }
 
     @Override
     protected void drawGuiContainerBackgroundLayer(final float partialTick) {
-        GL11.glColor3d(1d,1d, 1d);
+        GLRenderer.setColor3f(1f,1f, 1f);
         this.mc.textureManager.loadTexture("/assets/betterwithbackpacks/gui/backpack.png").bind();
         drawTexturedModalRect(this.GUIx, this.GUIy, 0, 0, this.xSize, this.ySize);
 
