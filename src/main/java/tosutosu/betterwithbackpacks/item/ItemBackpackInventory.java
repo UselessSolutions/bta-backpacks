@@ -8,7 +8,7 @@ import net.minecraft.core.player.inventory.InventorySorter;
 import net.minecraft.core.player.inventory.container.Container;
 import tosutosu.betterwithbackpacks.BetterWithBackpacks;
 
-public abstract class ItemBackpackInventory implements Container {
+public class ItemBackpackInventory implements Container {
     public final ItemStack stack;
     protected ItemStack[] backpackItemStacks;
     public ItemBackpackInventory(final ItemStack stack){

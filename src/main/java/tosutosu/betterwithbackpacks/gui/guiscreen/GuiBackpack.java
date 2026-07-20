@@ -28,8 +28,8 @@ public class GuiBackpack extends ScreenContainerAbstract {
     }
     @Override
     protected void drawGuiContainerForegroundLayer() {
-        this.font.drawString(this.backpack.backpackInventory.getNameTranslationKey(), 8, 6, BetterWithBackpacks.GUI_LABEL_COLOR);
-        this.font.drawString("Inventory", 8, this.ySize - 96 + 2, BetterWithBackpacks.GUI_LABEL_COLOR);
+        drawStringShadow(fontRenderer, this.backpack.backpackInventory.getNameTranslationKey(), 8, 6, BetterWithBackpacks.GUI_LABEL_COLOR);
+        drawStringShadow(fontRenderer, "Inventory", 8, this.ySize - 96 + 2, BetterWithBackpacks.GUI_LABEL_COLOR);
     }
 
     @Override

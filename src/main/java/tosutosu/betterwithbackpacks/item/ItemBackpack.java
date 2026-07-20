@@ -7,7 +7,7 @@ import net.minecraft.core.world.World;
 import tosutosu.betterwithbackpacks.BetterWithBackpacks;
 import tosutosu.betterwithbackpacks.IPlayerDisplay;
 
-public class ItemBackpack extends Item{
+public class ItemBackpack extends Item {
     public final int backpackSize;
     public ItemBackpack(final String translationKey, final String namespaceId, final int id) {
         this(translationKey, namespaceId, id, 9);
@@ -18,7 +18,7 @@ public class ItemBackpack extends Item{
         this.backpackSize = backpackSize;
     }
     @Override
-    public ItemStack onUseItem(final ItemStack itemstack, final World world, final Player entityplayer) {
+    public ItemStack onUse(final ItemStack itemstack, final World world, final Player entityplayer) {
         if (BetterWithBackpacks.ENABLE_BACKPACKS) {
             //noinspection CastToIncompatibleInterface
             ((IPlayerDisplay) entityplayer).bta_backpacks$displayGUIBackpack(itemstack);

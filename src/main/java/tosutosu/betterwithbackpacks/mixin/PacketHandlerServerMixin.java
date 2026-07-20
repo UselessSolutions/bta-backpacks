@@ -24,7 +24,7 @@ public abstract class PacketHandlerServerMixin {
             final int len = packet.getEstimatedSize() - (packet.channel.length() + 4);
             final CompoundTag tag = BackpacksClient.getStackUpdate(packet.data, len);
             final ItemStack heldItem;
-            if ((heldItem = this.playerEntity.inventory.getItem(this.playerEntity.inventory.getCurrentItemIndex())) != null && tag != null) {
+            if ((heldItem = this.playerEntity.inventory.getItem(this.playerEntity.inventory.getContainerSize())) != null && tag != null) {
                 heldItem.setData(tag);
             }
         }

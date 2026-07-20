@@ -23,7 +23,7 @@ public abstract class PacketHandlerClientMixin {
         if (packet.inventoryType == BetterWithBackpacks.GUI_BACKPACK_ID) {
             //noinspection CastToIncompatibleInterface
             ((IPlayerDisplay) (this.mc.thePlayer)).bta_backpacks$displayGUIBackpack(this.mc.thePlayer.getHeldItem());
-            this.mc.thePlayer.craftingInventory.containerId = packet.windowId;
+            this.mc.thePlayer.containerMenu.containerId = packet.windowId;
         }
     }
 }
