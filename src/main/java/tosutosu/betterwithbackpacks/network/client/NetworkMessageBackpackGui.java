@@ -40,8 +40,8 @@ public class NetworkMessageBackpackGui implements NetworkMessage {
 
     @Environment(EnvType.CLIENT)
     private void clientHandler() {
-        ContainerBackpack container = new ContainerBackpack(instanceId);
+//        ContainerBackpack container = new ContainerBackpack(instanceId);
 
-        Minecraft.getMinecraft().displayScreen(new GuiBackpack(container, width, height));
+//        Minecraft.getMinecraft().displayScreen(new GuiBackpack(container, width, height));
     }
 }
