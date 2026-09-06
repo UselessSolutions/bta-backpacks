@@ -25,9 +25,9 @@ public class PlayerServerMixin implements IPlayerDisplay {
             getNextWindowId();
             final ContainerBackpack backpack = new ContainerBackpack(this.thisAs.inventory, stack);
             this.thisAs.playerNetServerHandler.sendPacket(new PacketContainerOpen(this.currentWindowId, BetterWithBackpacks.GUI_BACKPACK_ID, "Backpack", backpack.backpackInventory.getContainerSize()));
-            this.thisAs.craftingInventory = backpack;
-            this.thisAs.craftingInventory.containerId = this.currentWindowId;
-            this.thisAs.craftingInventory.addSlotListener(this.thisAs);
+            this.thisAs.containerMenu = backpack;
+            this.thisAs.containerMenu.containerId = this.currentWindowId;
+            this.thisAs.containerMenu.addSlotListener(this.thisAs);
         }
     }
 }

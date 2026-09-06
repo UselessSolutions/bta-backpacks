@@ -1,5 +1,6 @@
 package tosutosu.betterwithbackpacks.gui.container;
 
+import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.InventoryAction;
 import net.minecraft.core.entity.player.Player;
@@ -40,7 +41,7 @@ public class ContainerBackpack extends MenuAbstract {
         }
     }
     @Override
-    public List<Integer> getMoveSlots(final InventoryAction inventoryAction, final Slot slot, final int i, final Player entityPlayer) {
+    public IntList getMoveSlots(final InventoryAction inventoryAction, final Slot slot, final int i, final Player entityPlayer) {
         final int chestSize = this.backpackInventory.getContainerSize();
         if (slot.index >= 0 && slot.index < chestSize) {
             return this.getSlots(0, chestSize, false);
@@ -58,7 +59,7 @@ public class ContainerBackpack extends MenuAbstract {
         return null;
     }
     @Override
-    public List<Integer> getTargetSlots(final InventoryAction inventoryAction, final Slot slot, final int i, final Player entityPlayer) {
+    public IntList getTargetSlots(final InventoryAction inventoryAction, final Slot slot, final int i, final Player entityPlayer) {
         final int chestSize = this.backpackInventory.getContainerSize();
         if (slot.index < chestSize) {
             return this.getSlots(chestSize, 36, true);
@@ -73,8 +74,8 @@ public class ContainerBackpack extends MenuAbstract {
 
     @Override
     public ItemStack clicked(final InventoryAction action, final int[] args, final Player player) {
-        int slotId = this.backpackInventory.getContainerSize() + player.inventory.getCurrentItemIndex() - 9;
-        if (player.inventory.getCurrentItemIndex() < 9) slotId = this.backpackInventory.getContainerSize() + player.inventory.getCurrentItemIndex() + (9 * 3);
+        int slotId = this.backpackInventory.getContainerSize() + player.inventory.getContainerSize() - 9;
+        if (player.inventory.getContainerSize() < 9) slotId = this.backpackInventory.getContainerSize() + player.inventory.getContainerSize() + (9 * 3);
         assert player.world != null;
         if (args != null && args.length >= 1 && args[0] == slotId) {
             if (player.world.isClientSide) {

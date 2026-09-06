@@ -1,6 +1,6 @@
 package tosutosu.betterwithbackpacks;
 
-import net.minecraft.client.render.EntityRenderDispatcher;
+import net.minecraft.client.render.EntityRendererDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
@@ -37,7 +37,7 @@ public class BackpacksModels implements ModelEntrypoint {
     }
 
     @Override
-    public void initEntityModels(EntityRenderDispatcher dispatcher) {}
+    public void initEntityModels(EntityRendererDispatcher dispatcher) {}
 
     @Override
     public void initTileEntityModels(TileEntityRenderDispatcher dispatcher) {}

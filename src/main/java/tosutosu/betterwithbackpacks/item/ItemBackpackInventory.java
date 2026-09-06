@@ -108,7 +108,7 @@ public class ItemBackpackInventory implements Container {
     }
 
     @Override
-    public void sortContainer() {
+    public void sort() {
         InventorySorter.sortInventory(this.backpackItemStacks);
     }
 }
